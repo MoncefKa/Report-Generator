@@ -1,0 +1,34 @@
+query($org:String!,$number:Int!){
+  organization(login:$org) {
+    projectV2(number:$number) {
+      title
+      items(first: 50) { 
+        nodes {
+          id
+          createdAt
+          content {
+            __typename
+            ...on DraftIssue{
+            title
+            assignees(first:10){
+              nodes{
+                name
+              }
+            }
+            }
+            ... on Issue {
+              title
+              url
+            }
+            ... on PullRequest {
+              title
+              url
+              state
+            }
+            
+          }
+        }
+      }
+    }
+  }
+}
