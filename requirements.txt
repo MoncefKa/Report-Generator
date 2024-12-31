@@ -2,3 +2,5 @@ PyGithub
 openai
 langchain
 python-dotenv
+apache-airflow
+gql
