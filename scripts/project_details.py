@@ -8,9 +8,10 @@ from gql.transport.requests import RequestsHTTPTransport
 load_dotenv()
 
 # Configuration
-PATH_QUERY = "../GraphQL/projects.graphql"  # Ensure this file exists
+PATH_QUERY = "../GraphQL/projects.graphql"  
 URL = "https://api.github.com/graphql"
 TOKEN = os.getenv("GITHUB_TOKEN")
+
 if not TOKEN:
     raise ValueError("GITHUB_TOKEN not found in environment variables.")
 
